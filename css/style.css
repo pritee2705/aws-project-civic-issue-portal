@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7f9;
+    color: #18202a;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+.navbar {
+    height: 72px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #111827;
+}
+
+.admin-nav {
+    padding: 10px 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.hero {
+    min-height: 650px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    background: #f6f7f9;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.badge,
+.small-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #64748b;
+}
+
+.hero h1 {
+    margin-top: 20px;
+    font-size: 62px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    margin-top: 25px;
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn {
+    background: white;
+    border: 1px solid #d1d5db;
+}
+
+.hero-card {
+    width: 390px;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status-dot {
+    color: #22c55e;
+}
+
+.map-placeholder {
+    height: 280px;
+    border-radius: 12px;
+    background:
+        linear-gradient(135deg, #dbeafe, #e5e7eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.issue-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+}
+
+.issue-preview h3 {
+    font-size: 16px;
+}
+
+.issue-preview p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.progress {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.solved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.stats {
+    background: #111827;
+    color: white;
+    padding: 35px 8%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.stat h2 {
+    font-size: 28px;
+}
+
+.stat p {
+    color: #9ca3af;
+    margin-top: 7px;
+    font-size: 13px;
+}
+
+.how-section,
+.about-section {
+    padding: 90px 8%;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.section-title h2 {
+    margin-top: 12px;
+    font-size: 38px;
+}
+
+.steps {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.step {
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+.step-number {
+    color: #2563eb;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.step h3 {
+    margin-top: 20px;
+}
+
+.step p {
+    margin-top: 10px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.about-section {
+    text-align: center;
+    background: #f6f7f9;
+}
+
+.about-section h2 {
+    font-size: 36px;
+}
+
+.about-section p {
+    max-width: 650px;
+    margin: 20px auto;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 30px 8%;
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 12px;
+    background: white;
+}
+
+
+@media(max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+
+    .stats,
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .stats,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}

@@ -1,0 +1,485 @@
+
+/* =========================================================
+   ISSUE DETAILS PAGE ONLY
+   ========================================================= */
+
+.issue-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 35px 30px 60px;
+}
+
+
+/* =========================
+   BACK TO DASHBOARD
+   ========================= */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+
+    color: #2563eb;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.back-link:hover {
+    color: #1d4ed8;
+    transform: translateX(-3px);
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.issue-details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+    padding: 25px 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.issue-details-header h1 {
+    margin: 5px 0 0;
+
+    color: #111827;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.issue-details-header .small-label {
+    color: #6b7280;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+
+/* =========================
+   STATUS
+   ========================= */
+
+.issue-details-header .status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.issue-details-header .status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.issue-details-header .status.progress {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.issue-details-header .status.solved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+/* =========================
+   GRID
+   ========================= */
+
+.details-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
+.details-card {
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.details-card h2 {
+    margin: 0 0 20px;
+
+    color: #111827;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   REPORTED IMAGE
+   ========================= */
+
+.issue-image-box {
+    width: 100%;
+    height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f3f4f6;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.issue-image-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   ISSUE INFORMATION
+   ========================= */
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row span {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.info-row strong {
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+/* =========================
+   AI CLASSIFICATION
+   ========================= */
+
+.ai-card {
+    background: linear-gradient(
+        135deg,
+        #f8fbff,
+        #ffffff
+    );
+
+    border-color: #dbeafe;
+}
+
+.ai-title {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+.ai-title > span {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dbeafe;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+}
+
+.ai-title h2 {
+    margin: 0 0 4px;
+}
+
+.ai-title p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONFIDENCE
+   ========================= */
+
+.confidence {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.confidence span {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.confidence strong {
+    color: #2563eb;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   PROGRESS BAR
+   ========================= */
+
+.progress-bar {
+    width: 100%;
+    height: 9px;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+
+    border-radius: 10px;
+}
+
+.progress-bar div {
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   UPDATE STATUS
+   ========================= */
+
+.form-help {
+    margin: -8px 0 18px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+#statusSelect {
+    width: 100%;
+
+    padding: 12px 14px;
+    margin-bottom: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+#statusSelect:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================
+   UPDATE BUTTON
+   ========================= */
+
+.primary-btn {
+    width: 100%;
+
+    padding: 12px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   STATUS MESSAGE
+   ========================= */
+
+#statusMessage {
+    margin-top: 12px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.success-message {
+    color: #15803d;
+}
+
+.error-message {
+    color: #dc2626;
+}
+
+
+/* =========================
+   AI SUMMARY
+   ========================= */
+
+.details-card.full-width {
+    grid-column: 1 / -1;
+}
+
+#aiSummary {
+    margin: 0;
+
+    color: #4b5563;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .issue-details-container {
+        padding: 25px 18px 40px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-card.full-width {
+        grid-column: auto;
+    }
+
+    .issue-image-box {
+        height: 280px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 500px) {
+
+    .issue-details-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .issue-details-header h1 {
+        font-size: 23px;
+    }
+
+    .details-card {
+        padding: 20px;
+    }
+
+    .issue-image-box {
+        height: 220px;
+    }
+
+    .info-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .info-row strong {
+        text-align: left;
+    }
+}
+

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Issue Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/issue-details.css">
+
+</head>
+
+<body class="admin-body">
+
+<header class="admin-navbar">
+
+    <div class="logo">
+        🏛️ Civic Admin
+    </div>
+
+    <div class="admin-user">
+
+        <span>
+            Administrator
+        </span>
+
+        <button onclick="adminLogout()">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="issue-details-container">
+
+    <a href="admin-dashboard.html"
+       class="back-link">
+        ← Back to Dashboard
+    </a>
+
+
+    <div class="issue-details-header">
+
+        <div>
+
+            <span class="small-label">
+                ISSUE DETAILS
+            </span>
+
+            <h1 id="issueId">
+                ISSUE-001
+            </h1>
+
+        </div>
+
+        <span
+            id="issueStatus"
+            class="status pending">
+            Pending
+        </span>
+
+    </div>
+
+
+    <div class="details-grid">
+
+
+        <section class="details-card">
+
+            <h2>Reported Image</h2>
+
+            <div class="issue-image-box">
+
+                <img
+                    id="issueImage"
+                    src=""
+                    alt="Civic Issue"
+                >
+
+            </div>
+
+        </section>
+
+
+        <section class="details-card">
+
+            <h2>Issue Information</h2>
+
+            <div class="info-row">
+
+                <span>Category</span>
+
+                <strong id="issueCategory">
+                    Pothole
+                </strong>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>Location</span>
+
+                <strong id="issueLocation">
+                    Pune
+                </strong>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>Latitude</span>
+
+                <strong id="issueLatitude">
+                    18.5204
+                </strong>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>Longitude</span>
+
+                <strong id="issueLongitude">
+                    73.8567
+                </strong>
+
+            </div>
+
+
+            <div class="info-row">
+
+                <span>Reported On</span>
+
+                <strong id="issueDate">
+                    10 Sep 2026
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <section class="details-card ai-card">
+
+            <div class="ai-title">
+
+                <span>🤖</span>
+
+                <div>
+                    <h2>AI Classification</h2>
+                    <p>Amazon Rekognition</p>
+                </div>
+
+            </div>
+
+
+            <div class="confidence">
+
+                <span>Confidence</span>
+
+                <strong id="confidence">
+                    92%
+                </strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div style="width:92%;"></div>
+
+            </div>
+
+        </section>
+
+
+        <section class="details-card">
+
+            <h2>Update Status</h2>
+
+            <p class="form-help">
+                Change the current issue status.
+            </p>
+
+
+            <select id="statusSelect">
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Solved">
+                    Solved
+                </option>
+
+            </select>
+
+
+            <button
+                onclick="updateIssueStatus()"
+                class="btn primary-btn">
+                Update Status
+            </button>
+
+            <p id="statusMessage"></p>
+
+        </section>
+
+
+        <section class="details-card full-width">
+
+            <h2>AI Generated Summary</h2>
+
+            <p id="aiSummary">
+
+                A civic issue has been detected at the
+                reported location. The issue requires
+                municipal attention.
+
+            </p>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

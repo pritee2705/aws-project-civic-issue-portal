@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Report Issue</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/client.css">
+
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <div class="logo">
+        🏙️ Unleash
+    </div>
+
+    <nav>
+
+        <a href="client-dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="report.html" class="active">
+            Report Issue
+        </a>
+
+        <a href="my-reports.html">
+            My Reports
+        </a>
+
+    </nav>
+
+    <div class="user-menu">
+
+        <span id="userName">
+            Citizen
+        </span>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="report-container">
+
+    <div class="page-heading">
+
+        <span class="small-label">
+            CIVIC ISSUE REPORT
+        </span>
+
+        <h1>Report an Issue</h1>
+
+        <p>
+            Upload a photo and mark the exact location
+            of the civic problem.
+        </p>
+
+    </div>
+
+
+    <form id="issueForm" class="issue-form">
+
+        <div class="form-card">
+
+            <h2>1. Upload Issue Image</h2>
+
+            <p class="form-help">
+                Upload a clear image of the problem.
+            </p>
+
+
+            <div class="upload-area">
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/jpeg,image/png,image/webp"
+                    required
+                >
+
+                <div id="uploadText">
+
+                    <div class="upload-icon">
+                        📷
+                    </div>
+
+                    <h3>Choose an image</h3>
+
+                    <p>
+                        JPG, PNG or WEBP · Maximum 6 MB
+                    </p>
+
+                </div>
+
+                <img
+                    id="imagePreview"
+                    class="image-preview"
+                    style="display:none;"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <h2>2. Select Location</h2>
+
+            <p class="form-help">
+                Click on the map to select the issue location.
+            </p>
+
+
+            <div id="map"></div>
+
+
+            <div class="location-grid">
+
+                <div>
+
+                    <label>Latitude</label>
+
+                    <input
+                        type="text"
+                        id="latitude"
+                        readonly
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>Longitude</label>
+
+                    <input
+                        type="text"
+                        id="longitude"
+                        readonly
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>Location Name</label>
+
+                    <input
+                        type="text"
+                        id="locationName"
+                        placeholder="e.g. Pune"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="submit-area">
+
+            <button
+                type="submit"
+                class="btn primary-btn">
+                Submit Issue →
+            </button>
+
+            <p id="submitMessage"></p>
+
+        </div>
+
+    </form>
+
+</main>
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script src="js/report.js"></script>
+
+</body>
+</html>

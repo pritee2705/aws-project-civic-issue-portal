@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Client Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body class="auth-body">
+
+<div class="auth-container">
+
+    <!-- LEFT SECTION -->
+    <div class="auth-left">
+
+        <div class="auth-brand">
+            🏙️ Unleash
+        </div>
+
+        <h1>
+            Make your city<br>
+            better, one report<br>
+            at a time.
+        </h1>
+
+        <p>
+            Report civic issues and track their resolution
+            directly from your dashboard.
+        </p>
+
+    </div>
+
+
+    <!-- LOGIN CARD -->
+    <div class="auth-card">
+
+        <div class="auth-icon">
+            👤
+        </div>
+
+        <h2>Welcome Back</h2>
+
+        <p class="auth-subtitle">
+            Login to your citizen account
+        </p>
+
+
+        <form id="loginForm">
+
+            <!-- EMAIL -->
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        onclick="togglePassword()"
+                        aria-label="Show or hide password"
+                        title="Show or hide password">
+
+                        👁
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+            <button
+                type="submit"
+                class="auth-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <!-- MESSAGE -->
+        <p
+            id="loginMessage"
+            class="message"
+            role="alert"
+            aria-live="polite">
+        </p>
+
+
+        <!-- FOOTER -->
+        <div class="auth-footer">
+
+            <p>
+                Don't have an account?
+                <a href="register.html">
+                    Create account
+                </a>
+            </p>
+
+            <hr>
+
+            <p>
+                Municipal Authority?
+                <a href="admin-login.html">
+                    Admin Login
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>
+

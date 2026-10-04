@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Client Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/client.css">
+
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <div class="logo">
+        🏙️ Unleash
+    </div>
+
+    <nav>
+        <a href="client-dashboard.html" class="active">
+            Dashboard
+        </a>
+
+        <a href="report.html">
+            Report Issue
+        </a>
+
+        <a href="my-reports.html">
+            My Reports
+        </a>
+    </nav>
+
+    <div class="user-menu">
+
+        <span id="userName">
+            Citizen
+        </span>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard-container">
+
+    <div class="welcome">
+
+        <div>
+            <span class="small-label">
+                CITIZEN DASHBOARD
+            </span>
+
+            <h1>
+                Welcome back, <span id="welcomeName">
+                Citizen
+                </span> 👋
+            </h1>
+
+            <p>
+                Help make your city cleaner, safer and better.
+            </p>
+        </div>
+
+        <a href="report.html"
+           class="btn primary-btn">
+            + Report Issue
+        </a>
+
+    </div>
+
+
+    <section class="dashboard-stats">
+
+        <div class="dashboard-stat">
+
+            <div class="stat-icon">
+                📋
+            </div>
+
+            <div>
+                <p>Total Reports</p>
+                <h2 id="totalReports">0</h2>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-stat">
+
+            <div class="stat-icon">
+                🟡
+            </div>
+
+            <div>
+                <p>Pending</p>
+                <h2 id="pendingReports">0</h2>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-stat">
+
+            <div class="stat-icon">
+                🔵
+            </div>
+
+            <div>
+                <p>In Progress</p>
+                <h2 id="progressReports">0</h2>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-stat">
+
+            <div class="stat-icon">
+                🟢
+            </div>
+
+            <div>
+                <p>Resolved</p>
+                <h2 id="resolvedReports">0</h2>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="reports-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-label">
+                    RECENT ACTIVITY
+                </span>
+
+                <h2>My Recent Reports</h2>
+            </div>
+
+            <a href="my-reports.html">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="report-table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>Issue ID</th>
+                    <th>Category</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+
+                </thead>
+
+                <tbody id="recentReports">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/client.js"></script>
+
+</body>
+</html>

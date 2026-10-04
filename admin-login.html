@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body class="admin-auth-body">
+
+<div class="auth-container">
+
+    <div class="auth-left admin-left">
+
+        <div class="auth-brand">
+            🏛️ Admin Portal
+        </div>
+
+        <h1>
+            Manage issues.<br>
+            Improve response.<br>
+            Build better cities.
+        </h1>
+
+        <p>
+            Municipal authority dashboard for monitoring
+            and resolving civic issues.
+        </p>
+
+    </div>
+
+
+    <div class="auth-card">
+
+        <div class="auth-icon">
+            🏛️
+        </div>
+
+        <h2>Admin Login</h2>
+
+        <p class="auth-subtitle">
+            Municipal Authority Portal
+        </p>
+
+
+        <form id="adminLoginForm">
+
+            <label for="adminEmail">Admin Email</label>
+
+            <input
+                type="email"
+                id="adminEmail"
+                name="email"
+                placeholder="Enter admin email"
+                autocomplete="username"
+                required
+            >
+
+
+            <label for="adminPassword">Password</label>
+
+            <input
+                type="password"
+                id="adminPassword"
+                name="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="auth-btn">
+                Admin Login
+            </button>
+
+        </form>
+
+
+        <p id="adminLoginMessage"
+           class="message">
+        </p>
+
+
+        <div class="auth-footer">
+
+            <p>
+                Citizen?
+                <a href="login.html">
+                    Client Login
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>
+

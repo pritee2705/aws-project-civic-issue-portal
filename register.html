@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body class="auth-body">
+
+<div class="auth-container">
+
+    <!-- LEFT SECTION -->
+    <div class="auth-left">
+
+        <div class="auth-brand">
+            🏙️ Unleash
+        </div>
+
+        <h1>
+            Your voice can<br>
+            improve your<br>
+            community.
+        </h1>
+
+        <p>
+            Create an account and start reporting
+            civic issues in your area.
+        </p>
+
+    </div>
+
+
+    <!-- REGISTER CARD -->
+    <div class="auth-card">
+
+        <div class="auth-icon">
+            ✨
+        </div>
+
+        <h2>Create Account</h2>
+
+        <p class="auth-subtitle">
+            Join the civic reporting community
+        </p>
+
+
+        <form id="registerForm">
+
+            <!-- FULL NAME -->
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="form-group">
+
+                <label for="registerEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    name="password"
+                    placeholder="Create a password"
+                    autocomplete="new-password"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm your password"
+                    autocomplete="new-password"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <!-- REGISTER BUTTON -->
+            <button
+                type="submit"
+                class="auth-btn">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+
+        <!-- MESSAGE -->
+        <p
+            id="registerMessage"
+            class="message"
+            role="alert"
+            aria-live="polite">
+        </p>
+
+
+        <!-- FOOTER -->
+        <div class="auth-footer">
+
+            <p>
+                Already have an account?
+                <a href="login.html">
+                    Login
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>
+

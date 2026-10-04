@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Civic Admin Dashboard</title>
+
+<link rel="stylesheet"
+      href="css/style.css">
+
+<link rel="stylesheet"
+      href="css/admin.css">
+
+<!-- Leaflet -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+
+
+</head>
+
+<body class="admin-body">
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="admin-navbar">
+
+
+<div class="logo">
+    🏛️ Civic Admin
+</div>
+
+
+<div class="admin-user">
+
+    <span id="adminName">
+        Administrator
+    </span>
+
+    <button
+        type="button"
+        onclick="adminLogout()">
+
+        Logout
+
+    </button>
+
+</div>
+
+
+</header>
+
+<!-- =====================================================
+     MAIN LAYOUT
+===================================================== -->
+
+<div class="admin-layout">
+
+
+<!-- =================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="sidebar">
+
+    <a href="#dashboard"
+       class="sidebar-link active"
+       data-section="dashboard">
+
+        📊 Dashboard
+
+    </a>
+
+
+    <a href="#issues"
+       class="sidebar-link"
+       data-section="issues">
+
+        📋 All Issues
+
+    </a>
+
+
+    <a href="#analytics"
+       class="sidebar-link"
+       data-section="analytics">
+
+        📈 Analytics
+
+    </a>
+
+
+    <a href="#map"
+       class="sidebar-link"
+       data-section="map">
+
+        🗺️ Map View
+
+    </a>
+
+
+    <a href="#notifications"
+       class="sidebar-link"
+       data-section="notifications">
+
+        🔔 Notifications
+
+        <span
+            id="notificationBadge"
+            class="notification-badge">
+
+            0
+
+        </span>
+
+    </a>
+
+</aside>
+
+
+
+<!-- =================================================
+     MAIN CONTENT
+================================================== -->
+
+<main class="admin-main">
+
+
+    <!-- =============================================
+         DASHBOARD
+    ============================================== -->
+
+    <section id="dashboard"
+             class="admin-module dashboard-module"
+             style="display:block;">
+
+
+        <div class="admin-heading">
+
+            <div>
+
+                <span class="small-label">
+                    MUNICIPAL AUTHORITY
+                </span>
+
+                <h1>
+                    Issue Management
+                </h1>
+
+                <p>
+                    Monitor, classify and resolve civic issues.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             STATISTICS
+        ========================================== -->
+
+        <section class="admin-stats">
+
+
+            <div class="admin-stat-card">
+
+                <span>📋</span>
+
+                <div>
+
+                    <p>
+                        Total Issues
+                    </p>
+
+                    <h2 id="adminTotal">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-stat-card pending-card">
+
+                <span>🟡</span>
+
+                <div>
+
+                    <p>
+                        Pending
+                    </p>
+
+                    <h2 id="adminPending">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-stat-card progress-card">
+
+                <span>🔵</span>
+
+                <div>
+
+                    <p>
+                        In Progress
+                    </p>
+
+                    <h2 id="adminProgress">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="admin-stat-card solved-card">
+
+                <span>🟢</span>
+
+                <div>
+
+                    <p>
+                        Solved
+                    </p>
+
+                    <h2 id="adminSolved">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             RECENT ISSUES
+        ========================================== -->
+
+        <section class="admin-issues dashboard-recent">
+
+
+            <div class="admin-section-heading">
+
+                <div>
+
+                    <span class="small-label">
+                        ISSUE MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Recent Issues
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="openSection('issues')">
+
+                    View All Issues →
+
+                </button>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>
+                            Issue ID
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Reported
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                    </thead>
+
+
+                    <tbody id="recentIssueTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </section>
+
+
+
+    <!-- =============================================
+         ALL ISSUES
+    ============================================== -->
+
+    <section id="issues"
+             class="admin-module">
+
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <span class="small-label">
+                    ISSUE MANAGEMENT
+                </span>
+
+                <h2>
+                    All Issues
+                </h2>
+
+                <p>
+                    Search, filter and manage reported civic issues.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FILTERS -->
+
+        <div class="admin-filters">
+
+
+            <input
+                type="text"
+                id="adminSearch"
+                placeholder="Search issue, category or location..."
+            >
+
+
+            <select id="adminStatusFilter">
+
+                <option value="ALL">
+                    All Status
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Solved">
+                    Solved
+                </option>
+
+            </select>
+
+
+            <select id="adminCategoryFilter">
+
+                <option value="ALL">
+                    All Categories
+                </option>
+
+                <option value="Pothole">
+                    Pothole
+                </option>
+
+                <option value="Garbage">
+                    Garbage
+                </option>
+
+                <option value="Traffic">
+                    Traffic
+                </option>
+
+                <option value="Streetlight">
+                    Streetlight
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="resetIssueFilters()">
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TABLE -->
+
+        <div class="admin-table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        Issue ID
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Location
+                    </th>
+
+                    <th>
+                        Reported
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="adminIssueTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =============================================
+         ANALYTICS
+    ============================================== -->
+
+    <section id="analytics"
+             class="admin-module">
+
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <span class="small-label">
+                    DATA ANALYTICS
+                </span>
+
+                <h2>
+                    Issue Analytics
+                </h2>
+
+                <p>
+                    Analyze civic issues by status and category.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ANALYTICS CARDS -->
+
+        <div class="analytics-summary">
+
+
+            <div>
+
+                <span>
+                    Total Issues
+                </span>
+
+                <strong id="analyticsTotal">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Pending
+                </span>
+
+                <strong id="analyticsPending">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    In Progress
+                </span>
+
+                <strong id="analyticsProgress">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Solved
+                </span>
+
+                <strong id="analyticsSolved">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CHARTS -->
+
+        <div class="analytics-grid">
+
+
+            <div class="analytics-card">
+
+                <h3>
+                    Issues by Status
+                </h3>
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="statusChart">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="analytics-card">
+
+                <h3>
+                    Issues by Category
+                </h3>
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="categoryChart">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =============================================
+         MAP
+    ============================================== -->
+
+    <section id="map"
+             class="admin-module">
+
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <span class="small-label">
+                    LOCATION MONITORING
+                </span>
+
+                <h2>
+                    Civic Issue Map
+                </h2>
+
+                <p>
+                    View reported civic issues by location.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="map-controls">
+
+
+            <select id="mapCategoryFilter">
+
+                <option value="ALL">
+                    All Categories
+                </option>
+
+                <option value="Pothole">
+                    Pothole
+                </option>
+
+                <option value="Garbage">
+                    Garbage
+                </option>
+
+                <option value="Traffic">
+                    Traffic
+                </option>
+
+                <option value="Streetlight">
+                    Streetlight
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+
+            <select id="mapStatusFilter">
+
+                <option value="ALL">
+                    All Status
+                </option>
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Solved">
+                    Solved
+                </option>
+
+            </select>
+
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="loadIssueMap()">
+
+                🔄 Refresh Map
+
+            </button>
+
+        </div>
+
+
+
+        <div id="issueMap"
+             class="issue-map">
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =============================================
+         NOTIFICATIONS
+    ============================================== -->
+
+    <section id="notifications"
+             class="admin-module">
+
+
+        <div class="admin-section-heading">
+
+            <div>
+
+                <span class="small-label">
+                    SYSTEM ALERTS
+                </span>
+
+                <h2>
+                    Notifications
+                </h2>
+
+                <p>
+                    Important updates about civic issues.
+                </p>
+
+            </div>
+
+
+            <button
+                class="secondary-btn"
+                onclick="clearNotifications()">
+
+                Mark all as read
+
+            </button>
+
+        </div>
+
+
+
+        <div id="notificationList"
+             class="notification-list">
+
+        </div>
+
+
+    </section>
+
+
+</main>
+```
+
+</div>
+
+<!-- =====================================================
+     LIBRARIES
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<!-- =====================================================
+     ADMIN JS
+===================================================== -->
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

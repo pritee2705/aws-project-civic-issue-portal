@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Reports</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/client.css">
+
+</head>
+
+<body>
+
+<header class="dashboard-navbar">
+
+    <div class="logo">
+        🏙️ Unleash
+    </div>
+
+    <nav>
+
+        <a href="client-dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="report.html">
+            Report Issue
+        </a>
+
+        <a href="my-reports.html" class="active">
+            My Reports
+        </a>
+
+    </nav>
+
+    <div class="user-menu">
+
+        <span id="userName">
+            Citizen
+        </span>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="dashboard-container">
+
+    <div class="page-heading">
+
+        <span class="small-label">
+            REPORT HISTORY
+        </span>
+
+        <h1>My Reports</h1>
+
+        <p>
+            Track the status of civic issues you have reported.
+        </p>
+
+    </div>
+
+
+    <div class="filter-bar">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search issue..."
+        >
+
+        <select id="statusFilter">
+
+            <option value="ALL">
+                All Status
+            </option>
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="In Progress">
+                In Progress
+            </option>
+
+            <option value="Solved">
+                Solved
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="report-grid" id="reportsContainer">
+
+    </div>
+
+</main>
+
+
+<script src="js/client.js"></script>
+
+</body>
+</html>
